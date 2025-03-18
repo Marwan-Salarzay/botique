@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/cartFavi.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="specificProduct.css">
+    <title>Cart</title>
+    <!-- <link rel="stylesheet" href="cart-badge.css" /> -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar flexBetween">
+          <div class="centerNav mobile-logo">
+            <div class="logo">
+              <a href="index.html">
+                <img
+                  src="/svg/logo.svg"
+                  alt="Azalna's Boutique Logo"
+                  height="100px"
+                  width="100px"
+                  fill="none"
+                />
+              </a>
+            </div>
+          </div>
+          
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <div class="nav-container" id="navContainer">
+            <div class="leftNav">
+              <ul class="flexBetween">
+                <li>
+                  <a class="underline-effect" href="index.html">
+                    <img src="/svg/home.svg" alt="Home" />
+                    <span class="nav-text">Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="underline-effect" href="allProducts.html">All Products</a>
+                </li>
+                <li><a class="underline-effect" href="blog.html">Blog</a></li>
+              </ul>
+            </div>
+    
+            <div class="centerNav desktop-logo">
+              <div class="logo">
+                <a href="index.html">
+                  <img
+                    src="/svg/logo.svg"
+                    alt="Azalna's Boutique Logo"
+                    height="100px"
+                    width="100px"
+                    fill="none"
+                  />
+                </a>
+              </div>
+            </div>
+    
+            <div class="rightNav">
+              <ul class="flexBetween">
+                <li>
+                  <span class="underline-effect">
+                    <img src="/svg/search.svg" alt="Search" height="28px" width="28px" />
+                    <span class="nav-text">Search</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="underline-effect">
+                    <img src="/svg/whishlist.svg" alt="Wishlist" height="28px" width="28px" />
+                    <span class="nav-text">Wishlist</span>
+                  </span>
+                </li>
+                <li>
+                  <a class="underline-effect" href="cart.html">
+                    <div class="cart-icon-container">
+                      <img src="/svg/cart.svg" alt="Cart" height="28px" width="28px" />
+                      <div id="cart-badge" class="cart-badge">0</div>
+                    </div>
+                    <span class="nav-text">Cart</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <div class="bagHeading relative flexCenter cartHeading">
+      <h2>YOUR CART</h2>
+      <img src="/svg/cart.svg" alt="" height="60px" width="60px" />
+    </div>
+    <div class="bagPageMain flexCenter">
+      <div class="bagContent">
+        
+      </div>
+      <div class="orderContainer flexColumn">
+
+      </div>
+    </div>
+    <br /><br />
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>Azalna's Boutique</h2>
+          <p>Your one-stop shop for fashion and elegance.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul id="links" class="">
+            <li><a href="#">AboutUs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: azalnaBotique.com</p>
+          <p>Phone: +1 (234) 567-8901</p>
+          <p>Address: Pakistan, Islamabad - F-11 / 3 </p>
+        </div>
+        <div class="footer-social">
+          <h3>Follow Us On:</h3>
+          <ul class="flexCenter footerSocial">
+            <li><a href="#" target="_blank"><img src="/svg/facebook.svg" alt="Facebook"></a></li>
+            <li><a href="https://www.instagram.com/azalnaboutique?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="/svg/isnta.svg" alt="Instagram"></a></li>
+            <li><a href="#" target="_blank"><img src="/svg/pinterest.svg" alt="Pinterest"></a></li>
+            <li><a href="#" target="_blank"><img src="/svg/linkedin.svg" alt="LinkedIn"></a></li>
+            <li><a href="#" target="_blank"><img src="/svg/tiktok.svg" alt="TikTok"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Azalna's Boutique. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+      // Hamburger menu functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navContainer = document.getElementById('navContainer');
+        
+        menuToggle.addEventListener('click', function() {
+          menuToggle.classList.toggle('active');
+          navContainer.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-container a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navContainer.classList.remove('active');
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          const isClickInsideNav = navContainer.contains(event.target);
+          const isClickOnToggle = menuToggle.contains(event.target);
+          
+          if (!isClickInsideNav && !isClickOnToggle && navContainer.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            navContainer.classList.remove('active');
+          }
+        });
+      });
+    </script>
+    <!-- <script src="cart-badge.js"></script> -->
+  </body>
+</html>
+

@@ -1,0 +1,356 @@
+* {
+    font-family: monospace;
+  }
+  
+  .cartHeading img,
+  h2 {
+    background-color: transparent;
+  }
+  
+  .bagPageMain {
+    margin-top: 2em;
+    padding: 5px 0px;
+    padding-bottom: 50px;
+    gap: 55px;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .counter {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    gap: 8px;
+  }
+  
+  button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .minus {
+    background-color: rgb(183, 180, 180);
+  }
+  
+  .plus {
+    background-color: rgb(185, 126, 126);
+  }
+  
+  input {
+    cursor: auto;
+    width: 35px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .bagItemCard {
+    padding: 10px;
+    gap: 200px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  .bagItemCard:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .flexColumn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .imgDetailsContainer {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .itemImageContainer {
+    max-height: fit-content;
+  }
+  
+  .itemImageContainer img {
+    border-radius: 7px;
+  }
+  
+  .itemQuantity {
+    gap: 50px;
+    bottom: 80px;
+    display: flex;
+  }
+  
+  .itemAttributes p {
+    font-size: 0.8em;
+    font-weight: 10;
+  }
+  
+  .delete {
+    overflow: hidden;
+  }
+  
+  .delete img {
+    transition: all 0.3s ease;
+  }
+  
+  .delete img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .orderContainer {
+    padding: 20px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 500px;
+    padding-bottom: 30px;
+  }
+  
+  .order-summary {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    border-style: dashed;
+    border-width: 0.10em;
+  }
+  
+  h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  
+  .total {
+    font-weight: bold;
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  .shadow {
+    box-shadow: -5px 8px 10px rgb(0 0 0 / 20%);
+  }
+  
+  .bagContent {
+    position: relative;
+    overflow: auto;
+    max-height: 1000px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    max-width: 890px;
+
+  }
+  
+  .totalLine {
+    border-bottom: 1px dashed black;
+  }
+  
+  #Proceed {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 13px 40px;
+    border-radius: 15px;
+  }
+  
+  #Proceed:hover {
+    background-color: rgb(152, 152, 152);
+    color: black;
+  }
+  
+  #voucherCode {
+    width: 260px;
+    text-align: center;
+  }
+  
+  /* Large screens (1024px and above) */
+  @media screen and (min-width: 1248px) {
+    .bagPageMain {
+      padding: 10px 50px;
+      gap: 60px;
+    }
+  
+    .bagItemCard {
+      gap: 350px;
+    }
+  
+    .order-summary {
+      width: 350px;
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
+  
+    .total {
+      font-size: 20px;
+    }
+  }
+  
+  /* Medium screens (768px to 1023px) */
+  @media screen and (min-width: 978px) and (max-width: 1060px) {
+    .bagPageMain {
+      padding: 10px 30px;
+      gap: 40px;
+    }
+  
+    .bagItemCard {
+      gap: 100px;
+    }
+  
+    .imgDetailsContainer {
+      gap: 15px;
+    }
+  
+    .itemQuantity {
+      gap: 30px;
+    }
+  
+    .order-summary {
+      width: 280px;
+    }
+  }
+  
+  /* Small screens (below 768px) */
+  @media screen and (max-width: 978px) {
+    .bagPageMain {
+      flex-direction: column;
+      padding: 10px 15px;
+      gap: 30px;
+    }
+  
+    .bagItemCard {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    .imgDetailsContainer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .itemQuantity {
+      position: static;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .order-summary {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  
+    .bagContent {
+      padding: 15px;
+    }
+  
+    #Proceed {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    #voucherCode {
+      width: 100%;
+    }
+  
+    h2 {
+      font-size: 18px;
+      text-align: center;
+    }
+  
+    button {
+      padding: 2px 6px;
+      font-size: 14px;
+    }
+  
+    .counter {
+      margin: 0 auto;
+    }
+  }
+  
+  /* Extra small screens (below 480px) */
+  @media screen and (max-width: 479px) {
+    .bagPageMain {
+      padding: 5px 10px;
+    }
+  
+    .bagItemCard {
+      padding: 8px;
+      margin: 5px;
+    }
+  
+    .itemImageContainer img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .orderContainer {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 16px;
+    }
+  
+    .itemAttributes p {
+      font-size: 0.7em;
+    }
+  
+    input {
+      width: 30px;
+      font-size: 12px;
+    }
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .cart-icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
